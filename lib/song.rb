@@ -65,6 +65,7 @@ class Song
     end
   artists
   end
+  def Song.genre_count
       genres[genre] = [0]
     end
     @@song_list.each do |num, data|
