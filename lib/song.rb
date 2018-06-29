@@ -65,24 +65,6 @@ class Song
     end
   artists
   end
-  def Song.genre_count
-      genres[genre] = [0]
-    end
-    @@song_list.each do |num, data|
-      data.each do |name, artist, genre|
-        
-        if genres.keys.include?(genre)
-          genre_num = genres[genre].join.to_i
-          genre_num += 1
-          binding.pry
-          genres[genre] = [genre_num]
-        else
-          genres[genre] = [0]
-        end
-      end
-    end
-    genres
-  end
 
   def self.count
     @@count
