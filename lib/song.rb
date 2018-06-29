@@ -14,9 +14,14 @@ class Song
     @@count += 1
     @@genres << genre
     @@artists << artist
+<<<<<<< HEAD
     if @@song_list.values.include?([name,artist,genre]) == false
       @@song_list[@@count] = [name,artist,genre]
     end
+=======
+    @@song_list[@@count] = [name,artist,genre]
+    puts @@song_list
+>>>>>>> aa111488f29c63d4ae26f30fa0978de2b7fa6639
   end
 
   def Song.artists
@@ -31,6 +36,7 @@ class Song
     genre_keys = @@genres.uniq!
     genres = {}
     genre_keys.each do |genre|
+<<<<<<< HEAD
       genres[genre] = 0
     end
     @@song_list.each do |num, data|
@@ -64,6 +70,27 @@ class Song
     end
   artists
   end
+=======
+      genres[genre] = [0]
+    end
+    @@song_list.each do |num, data|
+      data.each do |name, artist, genre|
+        
+        if genres.keys.include?(genre)
+          genre_num = genres[genre].join.to_i
+          genre_num += 1
+          binding.pry
+          genres[genre] = [genre_num]
+        else
+          genres[genre] = [0]
+        end
+      end
+    end
+    genres
+  end
+
+
+>>>>>>> aa111488f29c63d4ae26f30fa0978de2b7fa6639
 
   def self.count
     @@count
